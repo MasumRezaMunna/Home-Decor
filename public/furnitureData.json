@@ -1,0 +1,178 @@
+[
+  {
+    "id": 1,
+    "name": "Modern Velvet Sofa",
+    "category": "Furniture",
+    "price": 520,
+    "material": "Velvet, Wood",
+    "dimensions": "84 x 35 x 33 in",
+    "stock": true,
+    "image": "https://i.ibb.co/…/Modern-Velvet-Sofa.jpg",
+    "description": "A cozy velvet sofa with a modern design, ideal for living rooms."
+  },
+  {
+    "id": 2,
+    "name": "Wooden Coffee Table",
+    "category": "Furniture",
+    "price": 230,
+    "material": "Oak Wood",
+    "dimensions": "48 x 24 x 18 in",
+    "stock": true,
+    "image": "https://i.ibb.co/…/Wooden-Coffee-Table.jpg",
+    "description": "Rustic oak coffee table that brings warmth to your living space."
+  },
+  {
+    "id": 3,
+    "name": "Leather Recliner Chair",
+    "category": "Furniture",
+    "price": 480,
+    "material": "Genuine Leather, Steel Frame",
+    "dimensions": "35 x 32 x 42 in",
+    "stock": true,
+    "image": "https://i.ibb.co/…/Leather-Recliner-Chair.jpg",
+    "description": "Luxurious reclining chair for maximum comfort in your lounge."
+  },
+  {
+    "id": 4,
+    "name": "Glass Dining Table",
+    "category": "Furniture",
+    "price": 650,
+    "material": "Tempered Glass, Stainless Steel",
+    "dimensions": "72 x 40 x 30 in",
+    "stock": true,
+    "image": "https://i.ibb.co/…/Glass-Dining-Table.jpg",
+    "description": "Sleek glass dining table perfect for modern dining rooms."
+  },
+  {
+    "id": 5,
+    "name": "Bookshelf with Ladder",
+    "category": "Furniture",
+    "price": 399,
+    "material": "Pine Wood",
+    "dimensions": "80 x 30 x 14 in",
+    "stock": true,
+    "image": "https://i.ibb.co/…/Bookshelf-with-Ladder.jpg",
+    "description": "Tall pine bookshelf with sliding ladder for stylish storage."
+  },
+  {
+    "id": 6,
+    "name": "Mid-Century Sideboard",
+    "category": "Furniture",
+    "price": 520,
+    "material": "Teak Wood, Brass Handles",
+    "dimensions": "60 x 18 x 34 in",
+    "stock": true,
+    "image": "https://i.ibb.co/…/MidCentury-Sideboard.jpg",
+    "description": "Elegant mid-century sideboard for dining or living room."
+  },
+  {
+    "id": 7,
+    "name": "Outdoor Wicker Patio Set",
+    "category": "Furniture",
+    "price": 890,
+    "material": "All-weather wicker, Aluminum frame",
+    "dimensions": "Sectional 90 x 60 x 30 in",
+    "stock": true,
+    "image": "https://i.ibb.co/…/Outdoor-Wicker-Patio-Set.jpg",
+    "description": "Durable outdoor wicker set perfect for garden or terrace."
+  },
+  {
+    "id": 8,
+    "name": "Adjustable Standing Desk",
+    "category": "Furniture",
+    "price": 350,
+    "material": "Steel, MDF top",
+    "dimensions": "48 x 24 x (28-46) in",
+    "stock": true,
+    "image": "https://i.ibb.co/…/Adjustable-Standing-Desk.jpg",
+    "description": "Ergonomic standing desk with adjustable height for home office."
+  },
+  {
+    "id": 9,
+    "name": "Queen-Size Bed Frame",
+    "category": "Furniture",
+    "price": 620,
+    "material": "Metal & Wood",
+    "dimensions": "80 x 60 x 14 in (frame height)",
+    "stock": true,
+    "image": "https://i.ibb.co/…/Queen-Size-Bed-Frame.jpg",
+    "description": "Sturdy queen bed frame with a minimalist design."
+  },
+  {
+    "id": 10,
+    "name": "Vintage Floor Lamp",
+    "category": "Lighting",
+    "price": 140,
+    "material": "Brass, Fabric Shade",
+    "dimensions": "14 x 14 x 58 in",
+    "stock": true,
+    "image": "https://i.ibb.co/…/Vintage-Floor-Lamp.jpg",
+    "description": "Vintage style floor lamp for ambient lighting in your room."
+  },
+  {
+    "id": 11,
+    "name": "Area Rug – Persian Style",
+    "category": "Home Décor",
+    "price": 279,
+    "material": "Wool",
+    "dimensions": "8 x 10 ft",
+    "stock": true,
+    "image": "https://i.ibb.co/…/Area-Rug-Persian-Style.jpg",
+    "description": "Hand-look wool area rug in Persian motif to add character."
+  },
+  {
+    "id": 12,
+    "name": "Glass Display Cabinet",
+    "category": "Furniture",
+    "price": 499,
+    "material": "Glass, Walnut Wood",
+    "dimensions": "36 x 14 x 72 in",
+    "stock": true,
+    "image": "https://i.ibb.co/…/Glass-Display-Cabinet.jpg",
+    "description": "Tall display cabinet with glass doors for showcasing collectibles."
+  },
+  {
+    "id": 13,
+    "name": "Leather Writing Desk Chair",
+    "category": "Furniture",
+    "price": 220,
+    "material": "Leather, Solid Wood Frame",
+    "dimensions": "22 x 24 x 34 in",
+    "stock": true,
+    "image": "https://i.ibb.co/…/Leather-Writing-Desk-Chair.jpg",
+    "description": "Comfortable leather writing desk chair for home study or office."
+  },
+  {
+    "id": 14,
+    "name": "Marble Top Side Table",
+    "category": "Furniture",
+    "price": 310,
+    "material": "Marble, Iron Frame",
+    "dimensions": "18 x 18 x 22 in",
+    "stock": true,
+    "image": "https://i.ibb.co/…/Marble-Top-Side-Table.jpg",
+    "description": "Chic marble-top side table with iron frame — luxe but minimal."
+  },
+  {
+    "id": 15,
+    "name": "Corner Sectional Sofa",
+    "category": "Furniture",
+    "price": 1100,
+    "material": "Fabric, Wood Frame",
+    "dimensions": "110 x 90 x 34 in",
+    "stock": false,
+    "image": "https://i.ibb.co/…/Corner-Sectional-Sofa.jpg",
+    "description": "Large corner sectional sofa for big family lounging area."
+  },
+  {
+    "id": 16,
+    "name": "Modern Bar Stools Set of Two",
+    "category": "Furniture",
+    "price": 260,
+    "material": "Metal, Faux Leather",
+    "dimensions": "24 x 20 x 30 in each",
+    "stock": true,
+    "image": "https://i.ibb.co/…/Modern-Bar-Stools-Set.jpg",
+    "description": "Set of two modern bar stools, perfect for kitchen island or counter."
+  }
+]
