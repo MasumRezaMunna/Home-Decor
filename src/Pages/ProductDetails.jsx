@@ -18,6 +18,10 @@ const ProductDetails = () => {
 
       let updatedList = []
       if(existingList){
+        const isDuplicate = existingList.some(p => p.id === product.id)
+
+        if (isDuplicate) return alert('sorry bhai')
+
         updatedList = [...existingList, product]
       }else{
         updatedList.push(product)
