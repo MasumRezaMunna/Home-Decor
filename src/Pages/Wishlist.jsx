@@ -9,6 +9,39 @@ const Wishlist = () => {
     const savedList = JSON.parse(localStorage.getItem("wishlist"));
     if (savedList) setWishlist(savedList);
   }, []);
+
+
+  const sortedItem = (
+    () =>{
+    if(sortOrder === 'price-asc'){
+        return [...wishlist].sort((a, b) => a.price - b.price)
+    }else if(sortOrder === 'price-desc'){
+        return [...wishlist].sort((a, b) => b.price - a.price)
+    }else{
+        return wishlist
+    }
+  }
+  ) ()
+
+
+
+  const handleRemove = (id) =>{
+      const existingList = JSON.parse(localStorage.getItem('wishlist')) || []
+
+    
+
+      let updatedList = existingList.filter(p => p.id !== id)
+       
+      setWishlist(updatedList)
+       
+
+      localStorage.setItem('wishlist', JSON.stringify(updatedList))
+      console.log(existingList)
+      
+    }
+
+
+
   return (
     <div className="space-y-6">
       <div>
@@ -36,7 +69,7 @@ const Wishlist = () => {
         
       </div>
       <div className="space-y-3">
-         {wishlist.map(p => <div className="card card-side bg-base-100 shadow-sm">
+         {sortedItem.map(p => <div className="card card-side bg-base-100 shadow-sm">
   <div className="flex border rounded-xl justify-between w-full">
     <figure>
     <img
@@ -50,7 +83,7 @@ const Wishlist = () => {
     <div className="pr-4 flex items-center gap-3">
         <div className="font-semibold flex gap-5 items-center">
             <p>${p.price}</p>
-      <button className="btn btn-outline">Remove</button>
+      <button onClick={() => handleRemove(p.id)} className="btn btn-outline">Remove</button>
         </div>
     </div>
   </div>
