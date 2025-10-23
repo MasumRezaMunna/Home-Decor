@@ -1,46 +1,55 @@
 import React, { useEffect, useState } from "react";
+import { data } from "react-router";
+import {
+  Bar,
+  BarChart,
+  CartesianGrid,
+  Legend,
+  Rectangle,
+  ResponsiveContainer,
+  Tooltip,
+  XAxis,
+  YAxis,
+} from "recharts";
 
 const Wishlist = () => {
   const [wishlist, setWishlist] = useState([]);
 
-  const [sortOrder, setSortOrder] = useState('none')
+  const [sortOrder, setSortOrder] = useState("none");
 
   useEffect(() => {
     const savedList = JSON.parse(localStorage.getItem("wishlist"));
     if (savedList) setWishlist(savedList);
   }, []);
 
-
-  const sortedItem = (
-    () =>{
-    if(sortOrder === 'price-asc'){
-        return [...wishlist].sort((a, b) => a.price - b.price)
-    }else if(sortOrder === 'price-desc'){
-        return [...wishlist].sort((a, b) => b.price - a.price)
-    }else{
-        return wishlist
+  const sortedItem = (() => {
+    if (sortOrder === "price-asc") {
+      return [...wishlist].sort((a, b) => a.price - b.price);
+    } else if (sortOrder === "price-desc") {
+      return [...wishlist].sort((a, b) => b.price - a.price);
+    } else {
+      return wishlist;
     }
-  }
-  ) ()
+  })();
 
+  const handleRemove = (id) => {
+    const existingList = JSON.parse(localStorage.getItem("wishlist")) || [];
 
+    let updatedList = existingList.filter((p) => p.id !== id);
 
-  const handleRemove = (id) =>{
-      const existingList = JSON.parse(localStorage.getItem('wishlist')) || []
+    setWishlist(updatedList);
 
-    
+    localStorage.setItem("wishlist", JSON.stringify(updatedList));
+    console.log(existingList);
+  };
 
-      let updatedList = existingList.filter(p => p.id !== id)
-       
-      setWishlist(updatedList)
-       
+  // generate chart data
 
-      localStorage.setItem('wishlist', JSON.stringify(updatedList))
-      console.log(existingList)
-      
-    }
-
-
+  const totalsByCategory = {}
+  wishlist.forEach(product => {
+    const category = product.category
+    totalsByCategory[category] = (totalsByCategory[category] || 0) +  product.price
+  })
 
   return (
     <div className="space-y-6">
@@ -54,41 +63,64 @@ const Wishlist = () => {
             ({wishlist.length}) Products Found.
           </span>
         </h1>
-        
 
-           <label className="form-control w-full max-w-xs">
-             <select className="select select-bordered bg-black text-white" 
-                value={sortOrder}
-                onChange={e => setSortOrder(e.target.value)}
-            >
-                <option value="none">Sort by Price</option>
-                <option value="price-asc">Low-&gt;High</option>
-                <option value="price-desc">HIgh-&gt;Low</option>
-            </select>
-           </label>
-        
+        <label className="form-control w-full max-w-xs">
+          <select
+            className="select select-bordered bg-black text-white"
+            value={sortOrder}
+            onChange={(e) => setSortOrder(e.target.value)}
+          >
+            <option value="none">Sort by Price</option>
+            <option value="price-asc">Low-&gt;High</option>
+            <option value="price-desc">HIgh-&gt;Low</option>
+          </select>
+        </label>
       </div>
       <div className="space-y-3">
-         {sortedItem.map(p => <div className="card card-side bg-base-100 shadow-sm">
-  <div className="flex border rounded-xl justify-between w-full">
-    <figure>
-    <img
-      src={p.image}
-      alt={p.name} />
-  </figure>
-  <div className="card-body">
-    <h2 className="card-title">{p.name}</h2>
-    <p className="text-base-content/70">{p.category}</p>
-    </div>
-    <div className="pr-4 flex items-center gap-3">
-        <div className="font-semibold flex gap-5 items-center">
-            <p>${p.price}</p>
-      <button onClick={() => handleRemove(p.id)} className="btn btn-outline">Remove</button>
+        {sortedItem.map((p) => (
+          <div className="card card-side bg-base-100 shadow-sm">
+            <div className="flex border rounded-xl justify-between w-full">
+              <figure>
+                <img src={p.image} alt={p.name} />
+              </figure>
+              <div className="card-body">
+                <h2 className="card-title">{p.name}</h2>
+                <p className="text-base-content/70">{p.category}</p>
+              </div>
+              <div className="pr-4 flex items-center gap-3">
+                <div className="font-semibold flex gap-5 items-center">
+                  <p>${p.price}</p>
+                  <button
+                    onClick={() => handleRemove(p.id)}
+                    className="btn btn-outline"
+                  >
+                    Remove
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+      {/* char */}
+      <div className="space-y-3">
+        <h3 className="text-xl font-semibold">Wishlist Summery</h3>
+        <div className="bg-base-100 border rounded-xl p-4 h-80">
+          <ResponsiveContainer width="100%" height="100%">
+            <BarChart
+              
+              responsive
+              data={wishlist}
+            >
+              <CartesianGrid strokeDasharray="3 3" />
+              <XAxis dataKey="category" />
+              <YAxis />
+              <Tooltip />
+              <Legend />
+              <Bar dataKey="price" fill="#88ca9d" />
+            </BarChart>
+          </ResponsiveContainer>
         </div>
-    </div>
-  </div>
-  
-</div>)}
       </div>
     </div>
   );
